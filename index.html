@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Name and Password Validation </title>
+
+	<script type="text/javascript">
+		
+		function formValidation(){
+
+			if (document.myForm.username.value == "") {
+				alert("Please Provide Username");
+				document.myForm.username.focus();
+				return false;
+			}
+
+			if (document.myForm.pwd.value == "") {
+				alert("Please enter your password");
+				document.myForm.pwd.focus();
+				return false;
+			}
+
+			if (document.myForm.cnfpwd.value == "") {
+				alert("Please Enter Your Confirmed Password");
+				document.myForm.cnfpwd.focus();
+				return false;
+			}
+
+			var password = document.myForm.pwd.value;
+			var confirmpassword = document.myForm.cnfpwd.value;
+
+			if (password != confirmpassword) {
+				alert("Recheck Password");
+				return false;
+			}
+
+
+			return true;
+
+		}
+
+	</script>
+
+
+</head>
+
+<body>
+
+<form name="myForm" onsubmit="return formValidation()" value="welcome.html">
+
+	<table>
+		
+		<tr>
+			<td>Enter User Name :</td>
+			<td><input type="text" name="username"></td>
+		</tr>
+
+		<tr>
+			<td>Enter Password :</td>
+			<td><input type="password" name="pwd"></td>
+		</tr>
+
+		<tr>
+			<td>Enter Password for Confirmation :</td>
+			<td><input type="password" name="cnfpwd"></td>
+		</tr>
+
+		<tr>
+			<td><input type="submit" value="LOGIN"></td>
+		</tr>
+
+	</table>
+	
+</form>
+
+</body>
+
+</html>
